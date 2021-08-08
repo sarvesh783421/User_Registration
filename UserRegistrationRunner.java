@@ -15,7 +15,14 @@ public class UserRegistrationRunner{
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
 
+    // Mail validation block.
+    public boolean validateMail(String mail){
+        String check = "^([A-Za-z0-9-_.]+)@([a-zA-Z0-9]+).([a-z]{2,4}+).([a-z]{2,4})$";
+        Pattern pattern = Pattern.compile(check);
+        Matcher matcher = pattern.matcher(mail);
+        return matcher.matches();
     }
+    
     public void validateUserDetails(){
         Scanner input = new Scanner(System.in);
         UserDetails userDetails = new UserDetails();
@@ -38,5 +45,13 @@ public class UserRegistrationRunner{
             System.out.println("Entered Name is valid !!");
         else
             System.out.println("Entered name is invalid !!");
-
+	
+	// Validating Mail.
+        System.out.println("Enter your E-Mail address :- ");
+        userDetails.setMail(input.next());
+        boolean eMail = userRegistrationCheck.validateMail(userDetails.getMail());
+        if(eMail)
+            System.out.println("Entered Mail is valid !!");
+        else
+            System.out.println("Entered Mail is invalid !!");
 }

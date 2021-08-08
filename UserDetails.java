@@ -1,6 +1,8 @@
 public class UserDetails {
     String firstName;
-    
+    String lastName;
+    String eMail;
+   
     public String getFirstName() {
         return firstName;
     }
@@ -15,4 +17,11 @@ public class UserDetails {
     public void setLastName(String name){
         this.lastName = name;
     }    
+
+    public String getMail(){
+        return eMail;
+    }
+    public void setMail(String mail){
+        this.eMail = mail;
+    }
 }
