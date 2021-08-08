@@ -29,8 +29,8 @@ public class UserRegistrationRunner{
             System.out.println("Entered name is valid !!");
         else
             System.out.println("Entered name is invalid !!");
-
-        // Validating Last Name.
+	
+	   // Validating Last Name.
         System.out.println("Enter your Last Name :- ");
         userDetails.setLastName(input.next());
         boolean lName = userRegistrationCheck.validateName(userDetails.getLastName());
@@ -38,4 +38,5 @@ public class UserRegistrationRunner{
             System.out.println("Entered Name is valid !!");
         else
             System.out.println("Entered name is invalid !!");
+
 }
