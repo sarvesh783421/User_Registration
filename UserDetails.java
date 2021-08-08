@@ -9,12 +9,4 @@ public class UserDetails {
     public void setFirstName(String name){
         this.firstName = name;
     }
-    
-    public String getLastName(){
-        return lastName;
-    }
-    
-    public void setLastName(String name){
-        this.lastName = name;
-    }
 }
