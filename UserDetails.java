@@ -2,7 +2,7 @@ public class UserDetails {
     String firstName;
     String lastName;
     String eMail;
-   
+    String phoneNumber;   
     public String getFirstName() {
         return firstName;
     }
@@ -23,5 +23,12 @@ public class UserDetails {
     }
     public void setMail(String mail){
         this.eMail = mail;
+    }
+
+    public String getPhoneNumber(){
+        return phoneNumber;
+    }
+    public void setPhoneNumber(String number){
+        this.phoneNumber = number;
     }
 }

@@ -23,6 +23,14 @@ public class UserRegistrationRunner{
         return matcher.matches();
     }
     
+     // Number validation block.
+    public boolean validatePhoneNumber(String phoneNumber){
+        String check = "^(91)[0-9]{10}$";
+        Pattern pattern = Pattern.compile(check);
+        Matcher matcher = pattern.matcher(phoneNumber);
+        return matcher.matches();
+    }
+
     public void validateUserDetails(){
         Scanner input = new Scanner(System.in);
         UserDetails userDetails = new UserDetails();
@@ -37,7 +45,7 @@ public class UserRegistrationRunner{
         else
             System.out.println("Entered name is invalid !!");
 	
-	   // Validating Last Name.
+	// Validating Last Name.
         System.out.println("Enter your Last Name :- ");
         userDetails.setLastName(input.next());
         boolean lName = userRegistrationCheck.validateName(userDetails.getLastName());
@@ -54,4 +62,14 @@ public class UserRegistrationRunner{
             System.out.println("Entered Mail is valid !!");
         else
             System.out.println("Entered Mail is invalid !!");
+
+	// Validating Phone Number.
+        System.out.println("Enter your phone number :-");
+        userDetails.setPhoneNumber(input.next());
+        boolean number = userRegistrationCheck.validatePhoneNumber(userDetails.getPhoneNumber());
+        if(number)
+            System.out.println("Entered Phone number is valid !!");
+        else
+            System.out.println("Entered Phone number is invalid !!");
 }
+
