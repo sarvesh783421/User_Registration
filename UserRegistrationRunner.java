@@ -31,6 +31,14 @@ public class UserRegistrationRunner{
         return matcher.matches();
     }
 
+     // Password validation block.
+    public boolean validatePassword(String password){
+        String check = "^[a-zA-z0-9]{8,}$";
+        Pattern pattern = Pattern.compile(check);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
+
     public void validateUserDetails(){
         Scanner input = new Scanner(System.in);
         UserDetails userDetails = new UserDetails();
@@ -71,5 +79,14 @@ public class UserRegistrationRunner{
             System.out.println("Entered Phone number is valid !!");
         else
             System.out.println("Entered Phone number is invalid !!");
-}
 
+	// Validating password.
+        System.out.println("Enter your password :- ");
+        userDetails.setPassword(input.next());
+        boolean pass = userRegistrationCheck.validatePassword(userDetails.getPassword());
+        if(pass)
+            System.out.println("Entered password is valid !!");
+        else
+            System.out.println("Password should have minimum 8 characters");
+    }
+}
